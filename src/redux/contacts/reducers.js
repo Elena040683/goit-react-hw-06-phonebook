@@ -19,7 +19,13 @@ const contactsList = (state = initialState, action) => {
 };
 
 const contactFilter = (state = '', action) => {
-  return state;
+  switch (action.type) {
+    case 'contact/filter':
+      return action.payload;
+
+    default:
+      return state;
+  }
 };
 
 export const contactReducer = combineReducers({

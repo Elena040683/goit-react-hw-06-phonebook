@@ -1,5 +1,7 @@
 import { Component } from 'react';
 import styles from './ContactForm.module.css';
+import { addContact } from '../../redux/contacts/actions';
+import { connect } from 'react-redux';
 
 class ContactForm extends Component {
   state = {
@@ -21,6 +23,7 @@ class ContactForm extends Component {
   handleSubmit = e => {
     e.preventDefault();
     this.props.addNewContact(this.state);
+    this.props.onAdd(this.state);
     this.resetForm();
   };
 
@@ -62,4 +65,14 @@ class ContactForm extends Component {
   }
 }
 
-export default ContactForm;
+const mapStateToProps = state => ({
+  contactList: state.contacts,
+});
+
+const mapDispatchToProps = dispatch => {
+  return {
+    onAdd: contact => dispatch(addContact(contact)),
+  };
+};
+
+export default connect(mapStateToProps, mapDispatchToProps)(ContactForm);
