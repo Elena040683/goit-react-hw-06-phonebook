@@ -1,0 +1,25 @@
+.input {
+  display: block;
+}
+
+.label {
+  display: block;
+  margin-top: 10px;
+  font-weight: 500;
+  font-size: 18px;
+}
+
+.btn {
+  font-weight: 700;
+  font-size: 16px;
+  text-transform: uppercase;
+  color: #000;
+  padding: 3px 7px;
+  align-items: center;
+  margin-top: 15px;
+}
+
+.btn:hover {
+  background: rgb(68, 39, 235);
+  color: #fff;
+}
