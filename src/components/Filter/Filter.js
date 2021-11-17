@@ -1,4 +1,6 @@
+import { changeFilter } from '../../redux/contacts/actions';
 import styles from './Filter.module.css';
+import { connect } from 'react-redux';
 
 const Filter = ({ value, onChange }) => (
   <label className={styles.filterLabel}>
@@ -12,4 +14,14 @@ const Filter = ({ value, onChange }) => (
   </label>
 );
 
-export default Filter;
+// const mapStateToProps = state => ({
+//   value: state.contacts.filter,
+// });
+
+const mapDispatchToProps = dispatch => {
+  return {
+    onChange: e => dispatch(changeFilter(e.target.value)),
+  };
+};
+
+export default connect(null, mapDispatchToProps)(Filter);

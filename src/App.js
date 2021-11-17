@@ -7,9 +7,6 @@ import ContactForm from './components/ContactForm/ContactForm';
 import ContactList from './components/ContactList/ContactList';
 import Filter from './components/Filter/Filter';
 
-// import { changeFilter } from '../../redux/contacts/actions';
-// import { connect } from 'react-redux';
-
 class App extends Component {
   state = {
     contacts: [
@@ -84,15 +81,4 @@ class App extends Component {
   }
 }
 
-// const mapStateToProps = state => ({
-//  const {filter} = state.filter
-// });
-
-// const mapDispatchToProps = dispatch => {
-//   return {
-//     onAdd: contact => dispatch(addContact(contact)),
-//   };
-// };
-
-// export default connect(mapStateToProps, mapDispatchToProps)(App);
 export default App;
